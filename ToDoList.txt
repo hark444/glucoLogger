@@ -1,0 +1,5 @@
+ToDo
+1. Create home page, where you show the avg values of types of sugar for the last 7 days.
+2. Create graphs for types of glucose sugar.
+3. User should be able to delete a row of data in the view list. The deletion should be done after a secondary confirmation
+    from the user.

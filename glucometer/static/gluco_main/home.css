@@ -1,0 +1,75 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+main {
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+a:hover {
+  background-color: #ddd;
+}
+
+
+#beforeMeal, #afterMeal, #fasting {
+  color: black;
+}
+
+#beforeMeal:after, #afterMeal:after, #fasting:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+#beforeMeal[value=""], #afterMeal[value=""], #fasting[value=""] {
+  /* Hide highlighting for empty values */
+  &:after {
+    background-color: transparent !important;
+  }
+}
+
+#beforeMeal[value > 200]:after, #afterMeal[value > 200]:after, #fasting[value > 200]:after {
+  background-color: red;
+}
+
+.highlight {
+    background-color: red;
+}

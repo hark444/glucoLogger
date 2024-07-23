@@ -1,0 +1,43 @@
+{% extends "gluco_main/index.html" %}
+
+{% block content %}
+<body>
+  <header>
+    <h1>Welcome to Harshad's Blood Glucose Logger</h1>
+  </header>
+
+  <main>
+    <h2>Blood Sugar Averages (Past Week)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Average Value (mg/dL)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fasting</td>
+          <td id="fasting">{{ averages.fasting_avg }}</td>
+        </tr>
+        <tr>
+          <td>Random</td>
+          <td id="beforeMeal">{{ averages.random_avg }}</td>
+        </tr>
+        <tr>
+          <td>PP</td>
+          <td id="afterMeal">{{ averages.pp_avg }}</td>
+        </tr>
+      </tbody>
+    </table>
+      <div>
+          <p>Fasting chart here</p>
+          <div id="chart_div"></div>
+      </div>
+
+    <p><a href="/view_readings">See All Blood Glucose Readings</a></p>
+  </main>
+
+</body>
+
+{% endblock %}
