@@ -1,13 +1,9 @@
-import datetime
 from django.db.models import Avg
-from .models import GlucoseReadings, READING_CHOICES
+from .models import GlucoseReadings
 
 
 def get_trends(records: int = 7) -> dict:
-    # today = datetime.date.today()
-    # no_of_days_back = today - datetime.timedelta(days)
-
-    # Getting avg value for all sugar types for last #days
+    # Getting avg value for all sugar types for last #records, default: last 7 records
     fasting_avg = GlucoseReadings.objects.filter(type='FASTING').order_by('-id')[:records].aggregate(Avg('reading'))
     random_avg = GlucoseReadings.objects.filter(type='RANDOM').order_by('-id')[:records].aggregate(Avg('reading'))
     pp_avg = GlucoseReadings.objects.filter(type='PP').order_by('-id')[:records].aggregate(Avg('reading'))
