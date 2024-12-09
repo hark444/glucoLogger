@@ -32,7 +32,31 @@
     </table>
       <div>
           <p>Fasting chart here</p>
-          <div id="chart_div"></div>
+          <div id="chart_div">
+            <script>
+              window.onload = function () {
+              var chart= new CanvasJS.Chart("chartContainer", {
+              theme: "light2",
+              title: {
+                text: "Step Count Over a Week"
+              },
+              axisY: {
+                title: "Number of Steps",
+                stripLines: [{
+                  value: 10000,
+                  label: "Goal"
+                }]
+              },
+              data: [{
+                type: "line",
+                yValueFormatString: "#,### Steps",
+                dataPoints: {{ stepcount|safe }}
+              }]
+            });
+            chart.render();
+          }
+</script>
+          </div>
       </div>
 
     <p><a href="/view_readings">See All Blood Glucose Readings</a></p>

@@ -7,6 +7,7 @@
         <th>Date</th>
         <th>Reading</th>
         <th>Type</th>
+        <th>Notes</th>
     </tr>
 
     {% for reading in page_obj %}
@@ -14,6 +15,7 @@
             <td>{{ reading.date }}</td>
             <td>{{ reading.reading }}</td>
             <td>{{ reading.type }}</td>
+            <td>{{ reading.notes }}</td>
         </tr>
     {% endfor %}
 </table>

@@ -3,3 +3,5 @@ ToDo
 2. Create graphs for types of glucose sugar.
 3. User should be able to delete a row of data in the view list. The deletion should be done after a secondary confirmation
     from the user.
+4. Create a 'Notes' column for each reading
+5. Add a cron to push monthly data to google drive

@@ -27,7 +27,7 @@ def add_reading(request):
 @require_GET
 def view_readings(request):
     res = GlucoseReadings.objects.all().order_by('date')
-    paginator = Paginator(res, 15)
+    paginator = Paginator(res, 19)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     return render(request, "gluco_main/view_readings.html", {"page_obj": page_obj})
