@@ -5,3 +5,15 @@ ToDo
     from the user.
 4. Create a 'Notes' column for each reading
 5. Add a cron to push monthly data to google drive
+
+[feature/User]
+6. Create a User Model.
+7. The User should first log in to their account and then they should be able to create, view and update their readings.
+
+[feature/Postgres]
+8. All readings must go to a Postgres DB.
+9. Use alembic migrations.
+
+[feature/Docker]
+10. Create separate containers for both the app and database.
+11. Explore the related networking.
