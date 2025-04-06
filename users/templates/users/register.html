@@ -1,0 +1,40 @@
+{% extends "users/base.html" %}
+{% block content %}
+   <div class="card">
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('register')">Create Account</div>
+      </div>
+      <div id="register" class="tab-content active">
+        <h2 class="card-title">Create Your Account</h2>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group">
+              {{ form.username.label_tag }}
+              {{ form.username }}
+              {% for error in form.username.errors %}
+                    <span class="error">{{ error }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              {{ form.password1.label_tag }}
+              {{ form.password1 }}
+              {% for error in form.password1.errors %}
+                    <span class="error">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              {{ form.password2.label_tag }}
+              {{ form.password2 }}
+              {% for error in form.password2.errors %}
+                    <span class="error">{{ error }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <button type="submit" class="btn btn-secondary btn-block">Create Account</button>
+        </form>
+      </div>
+    </div>
+{% endblock %}

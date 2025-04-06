@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="20" ry="20" />
+  
+  <!-- Smartphone outline -->
+  <rect x="200" y="100" width="260" height="460" rx="20" ry="20" fill="#ffffff" stroke="#34495e" stroke-width="8" />
+  <rect x="215" y="130" width="230" height="380" rx="5" ry="5" fill="#ecf0f1" />
+  
+  <!-- App interface -->
+  <rect x="230" y="150" width="200" height="50" rx="5" ry="5" fill="#3498db" />
+  <text x="260" y="180" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">Glucometer</text>
+  <circle cx="330" cy="300" r="80" fill="#ffffff" stroke="#3498db" stroke-width="8" />
+  <text x="305" y="310" font-family="Arial" font-size="24" font-weight="bold" fill="#2c3e50">108</text>
+  <text x="310" y="335" font-family="Arial" font-size="14" fill="#7f8c8d">mg/dL</text>
+  
+  <!-- Chart -->
+  <polyline points="260,420 280,400 300,410 320,385 340,395 360,370 380,380 400,365" fill="none" stroke="#2ecc71" stroke-width="3" />
+  <line x1="260" y1="440" x2="400" y2="440" stroke="#bdc3c7" stroke-width="2" />
+  <line x1="260" y1="440" x2="260" y2="340" stroke="#bdc3c7" stroke-width="2" />
+  
+  <!-- Glucometer device -->
+  <rect x="500" y="250" width="150" height="240" rx="10" ry="10" fill="#ffffff" stroke="#34495e" stroke-width="5" />
+  <rect x="520" y="280" width="110" height="60" rx="5" ry="5" fill="#ecf0f1" />
+  <text x="552" y="320" font-family="Arial" font-size="22" font-weight="bold" fill="#2c3e50">108</text>
+  
+  <!-- Glucometer buttons -->
+  <circle cx="540" cy="380" r="15" fill="#e74c3c" />
+  <circle cx="580" cy="380" r="15" fill="#3498db" />
+  <circle cx="620" cy="380" r="15" fill="#2ecc71" />
+  
+  <!-- Test strip -->
+  <rect x="480" y="260" width="40" height="10" rx="2" ry="2" fill="#f1c40f" />
+  
+  <!-- Connecting line -->
+  <path d="M460,300 C430,280 430,230 460,210" fill="none" stroke="#3498db" stroke-width="3" stroke-dasharray="5,5" />
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="40" fill="#3498db" opacity="0.2" />
+  <circle cx="650" cy="450" r="60" fill="#2ecc71" opacity="0.2" />
+  <circle cx="100" cy="400" r="50" fill="#e74c3c" opacity="0.2" />
+  <circle cx="700" cy="200" r="45" fill="#f39c12" opacity="0.2" />
+  
+  <!-- Blood drop -->
+  <path d="M540,480 C560,510 580,510 600,480 C610,465 600,440 570,440 C540,440 530,465 540,480 Z" fill="#e74c3c" />
+</svg>

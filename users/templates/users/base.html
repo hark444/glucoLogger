@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlucoMeter - Manage Your Blood Sugar Levels</title>
+  <link rel="shortcut icon" href="{% static 'users/glucometer-logo-thumbnail.svg' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static '/users/stylesheet.css' %}">
+  <style>
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">G</div>
+        <div class="logo-text">GlucoMeter</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Track Your Blood Sugar the Smart Way</h1>
+        <p>GlucoMeter helps you monitor your glucose levels, identify patterns, and take control of your health. Join thousands of users who are managing their diabetes more effectively.</p>
+        <button class="btn btn-primary">Learn More</button>
+      </div>
+      <div class="hero-image">
+        <img src="{% static '/users/glucometer-home-illustration.svg' %}" alt="Blood sugar monitoring illustration">
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Track Glucose Levels</h3>
+        <p>Easily log your blood sugar readings and view trends over time.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔔</div>
+        <h3>Get Reminders</h3>
+        <p>Never miss a reading with customizable notifications.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <h3>Access Anywhere</h3>
+        <p>Use on any device with our web and mobile app versions.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 GlucoMeter. NO rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(tabId) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Remove active class from all tabs
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Activate the selected tab
+      document.getElementById(tabId).classList.add('active');
+
+      // Add active class to the clicked tab button
+      if (tabId === 'login') {
+        document.querySelectorAll('.tab')[0].classList.add('active');
+      } else {
+        document.querySelectorAll('.tab')[1].classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
