@@ -139,16 +139,26 @@ LOGGING = {
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
         },
     },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'DEBUG',  # Set to DEBUG for more detailed logs
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
         }
     },
-    'root': {  # This handles all logs if no specific logger is defined
-        'handlers': ['console'],
-        'level': 'DEBUG',  # or INFO if you want fewer messages
-    },
-}
+    'loggers': {
+         'users': {
+            'handlers': ['console'],
+            'level': 'DEBUG',  # or INFO, depending on how noisy you want it
+            'propagate': True,
+            'formatters': 'verbose'
+            },
+         'django': {
+            'handlers': ['console'],
+            'level': 'WARNING',  # Only show warnings/errors from Django
+            'propagate': False,
+         }
+    }
+    }
