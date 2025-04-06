@@ -1,7 +1,7 @@
 import logging
 from utils.utils import POST_STR
+from django.contrib import messages
 from .forms import UserProfileUpdateForm
-from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -16,10 +16,12 @@ logger = logging.getLogger(__name__)
 
 @login_required(login_url="/accounts/login")
 def account_home(request):
+    messages.add_message(request, messages.INFO, "Welcome to the GlucoMeter App!")
     return render(request, USER_BASE_TEMPLATE, {})
 
 
 def register(request):
+    form = None
     if request.method == POST_STR:
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -28,15 +30,17 @@ def register(request):
             logger.debug(f"Creating a new user with username: {username}")
             form.save()
             logger.info(f"User {username} has been successfully created.")
+            messages.add_message(request, messages.SUCCESS, "You have successfully registered with GlucoMeter.")
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, username, password)
             return redirect('home')
         else:
+            form = UserCreationForm(request.POST)
             logger.warning(f"User form error: {form.errors}")
 
     # For GET queries
-    else:
+    if not form:
         form = UserCreationForm()
 
     return render(request, USER_REGISTRATION_TEMPLATE, {'form': form})
@@ -53,6 +57,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 logger.debug("User is valid. Login in successful.")
+                messages.add_message(request, messages.SUCCESS, "You have successfully logged in.")
                 return redirect('home')
             else:
                 logger.warning(f"Invalid user: {username}. Login failed.")
@@ -70,7 +75,7 @@ def user_login(request):
 def user_logout(request):
     logger.info(f"Logging out the current user {request.user}")
     logout(request)
-    return redirect("home")
+    return redirect("login")
 
 
 @login_required
@@ -80,6 +85,7 @@ def update_user(request):
         if form.is_valid():
             logger.info(f"Updating user: {request.user}")
             form.save()
+            messages.add_message(request, messages.SUCCESS, "Your profile has been update successfully.")
 
     form = UserProfileUpdateForm(instance=request.user)
 

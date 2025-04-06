@@ -310,3 +310,60 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* Messages Section */
+.messages-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.alert-box {
+  position: relative;
+  padding: 15px 20px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 15px;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Success message */
+.alert-box.success {
+  background-color: #e6f4ea;
+  color: #256029;
+  border-color: #a1e2b0;
+}
+
+/* Error message */
+.alert-box.error {
+  background-color: #fbeaea;
+  color: #761b18;
+  border-color: #f5c6cb;
+}
+
+/* Warning message */
+.alert-box.warning {
+  background-color: #fff8e5;
+  color: #856404;
+  border-color: #ffeeba;
+}
+
+/* Info message */
+.alert-box.info {
+  background-color: #e7f3fe;
+  color: #0c5460;
+  border-color: #b8daff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}

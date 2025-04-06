@@ -98,9 +98,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
-    # {
-    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    # },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
@@ -132,7 +129,6 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,  # Don't disable Django's default loggers
@@ -159,6 +155,8 @@ LOGGING = {
             'handlers': ['console'],
             'level': 'WARNING',  # Only show warnings/errors from Django
             'propagate': False,
-         }
+            }
+        }
     }
-    }
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
