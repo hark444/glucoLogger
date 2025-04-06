@@ -19,6 +19,19 @@
         <div class="logo-text">GlucoMeter</div>
       </div>
     </div>
+    <div class="user-profile">
+      {% if user.is_authenticated %}
+        <div class="dropdown">
+          <button class="dropbtn">{{ user.username }} ⌄</button>
+          <div class="dropdown-content">
+            <a href="{% url 'profile_update' %}">View / Edit Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+          </div>
+        </div>
+      {% else %}
+        <a href="{% url 'login' %}" class="login-btn">Login</a>
+      {% endif %}
+    </div>
   </header>
 
   <div class="container">

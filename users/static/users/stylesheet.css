@@ -10,25 +10,25 @@
       --text: #2c3e50;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    body {
-      background-color: #f5f7fa;
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  background-color: #f5f7fa;
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
     header {
       background-color: white;
@@ -263,3 +263,50 @@
         gap: 0;
       }
     }
+
+/* User Profile Section */
+.user-profile {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-family: sans-serif;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

@@ -11,6 +11,8 @@ ToDo
 [feature/User]
 1. Create a User Model.
 2. The User should first log in to their account and then they should be able to create, view and update their readings.
+Bugs/Updates
+1. Add validations in username.
 
 [feature/Postgres]
 1. All readings must go to a Postgres DB.
