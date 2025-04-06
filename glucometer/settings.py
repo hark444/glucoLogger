@@ -130,3 +130,25 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,  # Don't disable Django's default loggers
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',  # Set to DEBUG for more detailed logs
+        }
+    },
+    'root': {  # This handles all logs if no specific logger is defined
+        'handlers': ['console'],
+        'level': 'DEBUG',  # or INFO if you want fewer messages
+    },
+}
