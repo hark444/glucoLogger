@@ -1,0 +1,40 @@
+{% extends "users/base.html" %}
+{% block content %}
+   <div class="card">
+      <div class="tabs">
+        <div class="tab active">Update Account</div>
+      </div>
+      <div id="register" class="tab-content active">
+        <h2 class="card-title">Update Your Account</h2>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group">
+              {{ form.first_name.label_tag }}
+              {{ form.first_name }}
+              {% for error in form.first_name.errors %}
+                    <span class="error">{{ error }}</span>
+              {% endfor %}
+            </div>
+              <div class="form-group">
+              {{ form.last_name.label_tag }}
+              {{ form.last_name }}
+              {% for error in form.last_name.errors %}
+                    <span class="error">{{ error }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              {{ form.email.label_tag }}
+              {{ form.email }}
+              {% for error in form.email.errors %}
+                    <span class="error">{{ error }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <button type="submit" class="btn btn-secondary btn-block">Update Account</button>
+        </form>
+      </div>
+    </div>
+{% endblock %}

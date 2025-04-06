@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlucoMeter - Manage Your Blood Sugar Levels</title>
+  <link rel="shortcut icon" href="{% static 'users/media/glucometer-logo-thumbnail.svg' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static '/users/css/stylesheet.css' %}">
+  <script src="{% static 'users/jss/messages.js' %}"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">G</div>
+        <div class="logo-text">GlucoMeter</div>
+      </div>
+    </div>
+    <div class="user-profile">
+      {% if user.is_authenticated %}
+        <div class="dropdown">
+          <button class="dropbtn">{{ user.username }} ⌄</button>
+          <div class="dropdown-content">
+            <a href="{% url 'profile_update' %}">View / Edit Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+          </div>
+        </div>
+      {% else %}
+        <a href="{% url 'login' %}" class="login-btn">Login</a>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if messages %}
+  <div class="messages-container">
+    {% for message in messages %}
+      <div class="alert-box {{ message.tags }}">
+        <span class="close-btn" onclick="this.parentElement.remove();">&times;</span>
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Track Your Blood Sugar the Smart Way</h1>
+        <p>GlucoMeter helps you monitor your glucose levels, identify patterns, and take control of your health. Join thousands of users who are managing their diabetes more effectively.</p>
+        <button class="btn btn-primary">Learn More</button>
+      </div>
+      <div class="hero-image">
+        <img src="{% static '/users/media/glucometer-home-illustration.svg' %}" alt="Blood sugar monitoring illustration">
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Track Glucose Levels</h3>
+        <p>Easily log your blood sugar readings and view trends over time.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔔</div>
+        <h3>Get Reminders</h3>
+        <p>Never miss a reading with customizable notifications.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <h3>Access Anywhere</h3>
+        <p>Use on any device with our web and mobile app versions.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 GlucoMeter. NO rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+
+  </script>
+</body>
+</html>
